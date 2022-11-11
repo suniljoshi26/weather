@@ -1,12 +1,24 @@
-import React, { useEffect } from "react";
-import { weatherData } from "../api";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+
 import Input from "./Input";
 
 const Card = () => {
+  const [search, setSearch] = useState("london");
+  const [data, setData] = useState([]);
+  const [input, setInput] = useState("");
   useEffect(() => {
-    weatherData().then((res) => {
-      console.log("SDD", res.data.name);
-    });
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=061602ffb426fc9a2f8cb137ac8b452c`
+      )
+      .then(
+        (res) => {
+          setData(res.data);
+          console.log("ad", res.data);
+        },
+        [input]
+      );
   });
   return (
     <div>
@@ -22,7 +34,7 @@ const Card = () => {
               <div className="card-img-overlay">
                 <Input />
                 <div className=" bg-dark bg-opacity-50 py-3 justify-content-center mt-4">
-                  <h2 className="card-title">London</h2>
+                  <h2 className="card-title">{data.name}</h2>
                   <p className="card-text">thursday, october 14,2022</p>
                   <hr />
                   <i className="fas fa-cloud fa-4x"></i>
