@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { weatherData } from "../api";
 import Input from "./Input";
 
 const Card = () => {
+  useEffect(() => {
+    weatherData().then((res) => {
+      console.log("SDD", res.data.name);
+    });
+  });
   return (
     <div>
-      <div className="container">
-        <div className="row">
+      <div className="container mt-5 ">
+        <div className="row justify-content-center">
           <div className="col-md-4">
-            <div class="card text-bg-dark">
+            <div className="card text-bg-dark">
               <img
                 src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1965&q=80"
                 class="card-img"
                 alt="..."
               />
-              <div class="card-img-overlay">
+              <div className="card-img-overlay">
                 <Input />
                 {/* 
                 <h5 class="card-title">Card title</h5>

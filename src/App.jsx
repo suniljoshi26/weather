@@ -1,8 +1,8 @@
+import axios from "axios";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 
 import Card from "./Compnenets/Card";
-
+//const [search, setSearch] = useState("london");
 function App() {
   return (
     <div>
