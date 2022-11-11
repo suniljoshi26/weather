@@ -7,7 +7,7 @@ const Input = () => {
         <input type="text" class="form-control" />
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button">
-            Button
+            <i className="fa fa-search "></i>
           </button>
         </div>
       </div>
