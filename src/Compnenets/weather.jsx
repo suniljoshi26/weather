@@ -2,6 +2,8 @@ import React from "react";
 
 const Weather = ({ data }) => {
   let temp = (data.main.temp - 273.15).toFixed(2);
+  let temp_min = (data.main.temp_min - 273.15).toFixed(2);
+  let temp_max = (data.main.temp_max - 273.15).toFixed(2);
   return (
     <div>
       {" "}
@@ -9,10 +11,12 @@ const Weather = ({ data }) => {
         <h2 className="card-title">{data.name}</h2>
         <p className="card-text">thursday, october 14,2022</p>
         <hr />
-        <i className="fas fa-cloud fa-4x"></i>
+        <i className="fas ${emoji} fa-4x"></i>
         <h1 className=" fx-border mb-5">{temp}&deg;C</h1>
         <p className=" fw-bolder mb-0 lead">{data.weather[0].main}</p>
-        <p className="lead mt-2 "> </p>
+        <p className="lead mt-2 ">
+          {temp_min}&deg;C || {temp_max}&deg;C{" "}
+        </p>
       </div>
     </div>
   );
