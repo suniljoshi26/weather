@@ -1,6 +1,14 @@
 import React from "react";
 
 const Weather = ({ data }) => {
+  console.log("data is a", data);
+  let emoji = null;
+  if (data.main != "undefined") {
+    if (data.weather[0].main == Clouds) {
+      emoji = "fa-cloud";
+    }
+  }
+
   let temp = (data.main.temp - 273.15).toFixed(2);
   let temp_min = (data.main.temp_min - 273.15).toFixed(2);
   let temp_max = (data.main.temp_max - 273.15).toFixed(2);

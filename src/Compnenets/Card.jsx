@@ -7,23 +7,16 @@ const Card = () => {
   const [search, setSearch] = useState("london");
   const [data, setData] = useState([]);
   const [input, setInput] = useState("");
-  let a = true;
-
-  console.log(data);
-
+  console.log("vgghsdhsdh");
   useEffect(() => {
+    console.log("vgghsdhsdh");
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=061602ffb426fc9a2f8cb137ac8b452c`
       )
       .then((res) => {
-        if (a) {
-          setData(res.data);
-          console.log("ad", res.data.weather.main[0]);
-        }
-        return () => {
-          a = false;
-        };
+        setData(res.data);
+        console.log("ad", res.data);
       });
   }, [search]);
 
