@@ -2,7 +2,7 @@ import React from "react";
 
 const Weather = ({ data }) => {
   // const { name, main } = data;
-  // const { temp_min, temp_max, temp } = main;
+  //  const { temp_min, temp_max, temp } = main;
 
   console.log("gfgh", data.main.temp);
   // let emoji = null;
@@ -13,8 +13,9 @@ const Weather = ({ data }) => {
   // }
 
   // let temp = (data.main.temp - 273.15).toFixed(2);
-  // let temp_min = (data.main.temp_min - 273.15).toFixed(2);
-  // let temp_max = (data.main.temp_max - 273.15).toFixed(2);
+
+  let temp_min = (data.main.temp_min - 273.15).toFixed(2);
+  let temp_max = (data.main.temp_max - 273.15).toFixed(2);
   return (
     <div>
       {" "}
@@ -24,9 +25,9 @@ const Weather = ({ data }) => {
         <hr />
         <i className="fas ${emoji} fa-4x"></i>
         <h1 className=" fx-border mb-5"> {data.main.temp} </h1>
-        <p className=" fw-bolder mb-0 lead">{/* {data.weather[0].main} */}</p>
+        <p className=" fw-bolder mb-0 lead"> {data.weather[0].main} </p>
         <p className="lead mt-2 ">
-          {/* {temp_min}&deg;C || {temp_max}&deg;C{" "} */}
+          {data.main.temp_min}&deg;C || {data.main.temp_max}&deg;
         </p>
       </div>
     </div>
