@@ -1,6 +1,12 @@
 import React from "react";
 
 const Weather = ({ data }) => {
+  const d = new Date();
+  console.log("hhsg", d);
+  const date = d.getDate();
+  const year = d.getFullYear;
+  const month = d.getMonth("default", { month: "long" });
+  const day = d.getDay("default", { weekday: "long" });
   let emoji;
   if (typeof data.main != "undefined") {
     if (data.weather[0].main == "Clouds") {
@@ -36,7 +42,7 @@ const Weather = ({ data }) => {
       {" "}
       <div className=" bg-dark bg-opacity-50 py-3 justify-content-center mt-4">
         <h2 className="card-title">{data.name}</h2>
-        <p className="card-text">Tuesday, November 15,2022</p>
+        <p className="card-text">{(date, month, year)}</p>
         <hr />
         <i className={` fas ${emoji} fa-4x`}></i>
         <h1 className=" fx-border mb-5"> {temp}&deg;C </h1>
