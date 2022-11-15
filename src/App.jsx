@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Weather from "./Compnenets/weather";
 
 const App = () => {
-  const [search, setSearch] = useState("lohadhat");
+  const [search, setSearch] = useState("Lohaghat");
   const [data, setData] = useState();
   const [input, setInput] = useState("");
   console.log("vgghsdhsdh");
