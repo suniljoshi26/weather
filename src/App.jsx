@@ -4,7 +4,7 @@ import Weather from "./Compnenets/weather";
 
 const App = () => {
   const [search, setSearch] = useState("london");
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
   const [input, setInput] = useState("");
   console.log("vgghsdhsdh");
   useEffect(() => {
@@ -15,7 +15,7 @@ const App = () => {
       )
       .then((res) => {
         setData(res.data);
-        console.log("ad", res.data.main.temp);
+        console.log("ad", res.data);
       })
       .catch((error) => {
         console.log(error.res.data.message);
