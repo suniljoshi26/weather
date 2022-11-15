@@ -52,9 +52,9 @@ const Weather = ({ data }) => {
       <div className=" bg-dark bg-opacity-50 py-3 justify-content-center mt-4">
         <h2 className="card-title">{data.name}</h2>
         <p className="card-text">
-          {day},{month},{data},{year}
+          {day},{month},{date},{year}
           <br />
-          {date}
+          {time}
         </p>
         <hr />
         <i className={` fas ${emoji} fa-4x`}></i>
