@@ -18,7 +18,7 @@ const Weather = ({ data }) => {
   const hand = () => {
     setTime(time);
   };
-  // setInterval(hand, 1000);
+  setInterval(hand, 1000);
   // emoji
   let emoji;
   if (typeof data.main != "undefined") {
