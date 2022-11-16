@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div>
       <div className="container mt-5 ">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center overflow-hidden">
           <div className="col-md-4 ">
             <div className="card text-bg-dark text-center border-0 ">
               <img
@@ -42,7 +42,7 @@ const App = () => {
               />
               <div className="card-img-overlay">
                 <form onSubmit={handlesubmit}>
-                  <div className="input-group mb-3">
+                  <div className="input-group sm:mb-3">
                     <input
                       type="text"
                       className="form-control"

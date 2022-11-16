@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Weather = ({ data }) => {
+  const [ctime, setTime] = useState();
   // date
   const d = new Date();
   console.log("hhsg", d);
@@ -9,12 +10,15 @@ const Weather = ({ data }) => {
   const month = d.toLocaleString("default", { month: "long" });
   const day = d.toLocaleString("default", { weekday: "long" });
   // time
-
   const time = d.toLocaleString([], {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
   });
+  const hand = () => {
+    setTime(time);
+  };
+  setInterval(hand, 1000);
   // emoji
   let emoji;
   if (typeof data.main != "undefined") {
@@ -49,12 +53,12 @@ const Weather = ({ data }) => {
   return (
     <div>
       {" "}
-      <div className=" bg-dark bg-opacity-50 py-3 justify-content-center mt-4">
+      <div className="  card bg-dark bg-opacity-50 py-3 justify-content-center mt-4   overflow-hidden">
         <h2 className="card-title">{data.name}</h2>
         <p className="card-text">
           {day},{month},{date},{year}
           <br />
-          {time}
+          {ctime}
         </p>
         <hr />
         <i className={` fas ${emoji} fa-4x`}></i>
