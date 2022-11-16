@@ -18,7 +18,8 @@ const Weather = ({ data }) => {
   const hand = () => {
     setTime(time);
   };
-  setInterval(hand, 1000);
+  const h = setInterval(hand, 1000);
+  // clearInterval(h);
   // emoji
   let emoji;
   if (typeof data.main != "undefined") {
@@ -62,7 +63,7 @@ const Weather = ({ data }) => {
         </p>
         <hr />
         <i className={` fas ${emoji} fa-4x`}></i>
-        <h1 className=" fx-border mb-5"> {temp}&deg;C </h1>
+        <h1 className=" fx-border mb-2"> {temp}&deg;C </h1>
         <p className=" fw-bolder mb-0 lead"> {data.weather[0].main} </p>
         <p className="lead mt-2 ">
           {temp_min}&deg;C || {temp_max}&deg;C
