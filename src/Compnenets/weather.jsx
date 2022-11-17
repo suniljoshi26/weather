@@ -20,7 +20,7 @@ const Weather = ({ data }) => {
   };
   useEffect(() => {
     setInterval(hand, 1000);
-  }, []);
+  });
 
   // clearInterval(h);
   // emoji
