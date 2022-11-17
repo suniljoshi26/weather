@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Weather = ({ data }) => {
   const [ctime, setTime] = useState();
@@ -18,7 +18,10 @@ const Weather = ({ data }) => {
   const hand = () => {
     setTime(time);
   };
-  const h = setInterval(hand, 1000);
+  useEffect(() => {
+    setInterval(hand, 1000);
+  }, []);
+
   // clearInterval(h);
   // emoji
   let emoji;
