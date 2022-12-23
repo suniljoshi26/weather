@@ -1,27 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Time } from "./Time";
 
 const Weather = ({ data }) => {
-  const [ctime, setTime] = useState();
-  // date
-  const d = new Date();
-  console.log("hhsg", d);
-  const date = d.getDate();
-  const year = d.getFullYear;
-  const month = d.toLocaleString("default", { month: "long" });
-  const day = d.toLocaleString("default", { weekday: "long" });
-  // time
-  const time = d.toLocaleString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
-  const hand = () => {
-    setTime(time);
-  };
-  useEffect(() => {
-    setInterval(hand, 1000);
-  });
-
   // clearInterval(h);
   // emoji
   let emoji;
@@ -59,11 +39,7 @@ const Weather = ({ data }) => {
       {" "}
       <div className="  card bg-dark bg-opacity-50 py-3 justify-content-center mt-4   overflow-hidden">
         <h2 className="card-title">{data.name}</h2>
-        <p className="card-text">
-          {day},{month},{date},{year}
-          <br />
-          {ctime}
-        </p>
+        <Time />
         <hr />
         <i className={` fas ${emoji} fa-4x`}></i>
         <h1 className=" fx-border mb-2"> {temp}&deg;C </h1>
